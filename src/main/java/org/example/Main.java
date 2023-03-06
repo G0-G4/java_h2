@@ -14,9 +14,6 @@ public class Main {
             System.out.println("ожидался полный путь до бд, логин, пароль, имя выходного файла");
             exit(1);
         }
-        for(var a: args){
-            System.out.println(a);
-        }
         jdbcURL += args[0];
         name = args[1];
         pwd = args[2];
