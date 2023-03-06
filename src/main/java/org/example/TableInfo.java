@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class TableInfo {
     private final String name;
-    private Map<String, PrimaryKey> primary_keys = new HashMap<>();
+    private final Map<String, PrimaryKey> primary_keys = new HashMap<>();
     TableInfo(String name, String pk){
         this.name = name;
         for (String key: pk.split(",")) {
@@ -29,11 +29,10 @@ public class TableInfo {
     public String toString() {
         return name;
     }
-    public void print(){
+    public void print(String name){
         for(var k: primary_keys.values()){
             System.out.println(name + " " + k.getName() + " " + k.getType());
         }
     }
-
 }
 
