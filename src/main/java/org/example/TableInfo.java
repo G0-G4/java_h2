@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.HashMap;
 import java.util.Map;
+
 public class TableInfo {
     private final String name;
     private Map<String, PrimaryKey> primary_keys = new HashMap<>();
@@ -23,6 +24,10 @@ public class TableInfo {
         else{
             System.out.println(key + "остутствует");
         }
+    }
+    @Override
+    public String toString() {
+        return name;
     }
     public void print(){
         for(var k: primary_keys.values()){

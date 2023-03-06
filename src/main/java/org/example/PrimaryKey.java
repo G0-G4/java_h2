@@ -1,6 +1,6 @@
 package org.example;
 
-public class PrimaryKey {
+public class PrimaryKey{
     private final String name;
     private String type;
 
@@ -19,5 +19,10 @@ public class PrimaryKey {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return this.name + " " + this.type;
     }
 }
