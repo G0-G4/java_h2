@@ -9,7 +9,7 @@ public class TableInfo {
     TableInfo(String name, String pk){
         this.name = name;
         for (String key: pk.split(",")) {
-            primary_keys.put(key.strip().toLowerCase(), new PrimaryKey(key, null));
+            primary_keys.put(key.strip().toLowerCase(), new PrimaryKey(key.strip(), null));
         }
     }
     public boolean hasPK(String key){
@@ -27,7 +27,11 @@ public class TableInfo {
     }
     @Override
     public String toString() {
-        return name;
+        StringBuilder res = new StringBuilder();
+        for(var k: primary_keys.values()){
+            res.append(name + ", " + k.toString() + '\n');
+        }
+        return res.toString();
     }
     public void print(String name){
         for(var k: primary_keys.values()){

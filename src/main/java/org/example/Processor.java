@@ -39,7 +39,7 @@ public class Processor {
         }
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(name))) {
             for (var t:tables.values()) {
-                writer.write(t.toString()+"\n");
+                writer.write(t.toString());
             }
         }
     }
